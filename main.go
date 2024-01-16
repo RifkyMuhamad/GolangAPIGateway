@@ -16,6 +16,14 @@ func main() {
 
 	router.NewRouter(app)
 
+	app.Get("/env", func(c *fiber.Ctx) error {
+		test := os.Getenv("TEST_ENV")
+		data := map[string]string{
+			"port": test,
+		}
+		return c.JSON(data)
+	})
+
 	port := os.Getenv("PORT")
 
 	if port == "" {
