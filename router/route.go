@@ -1,6 +1,8 @@
 package router
 
 import (
+	"os"
+	
 	"github.com/RifkyMuhamad/GolangAPIGateway/controllers"
 	"github.com/gofiber/fiber/v2"
 )
@@ -38,13 +40,13 @@ func NewRouter (app *fiber.App) {
 		})
 	})
 
-	// app.Get("/env", func(c *fiber.Ctx) error {
-	// 	test := os.Getenv("TEST_ENV")
-	// 	data := map[string]string{
-	// 		"port": test,
-	// 	}
-	// 	return c.JSON(data)
-	// })
+	app.Get("/env", func(c *fiber.Ctx) error {
+		test := os.Getenv("TEST_ENV")
+		data := map[string]string{
+			"port": test,
+		}
+		return c.JSON(data)
+	})
 
 	app.Get("/string", func(c *fiber.Ctx) error {
 		data := "Ini String"
