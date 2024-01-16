@@ -1,9 +1,1 @@
-test
-service
-repository
-models
-middleware
-helper
-exception
-database
 .env

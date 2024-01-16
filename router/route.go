@@ -3,17 +3,12 @@ package router
 import (
 	"os"
 
+	"github.com/RifkyMuhamad/GolangAPIGateway/controllers"
 	"github.com/gofiber/fiber/v2"
 )
 
 func NewRouter (app *fiber.App) {
-	app.Get("/", func(c *fiber.Ctx) error {
-		data := map[string]string{
-			"documentation": "https://github.com/RifkyMuhamad/GolangAPIGateway",
-			"message": "Dyone Strankers use Go Fiber",
-		}
-		return c.JSON(data)
-	})
+	app.Get("/", controllers.Welcome)
 
 	app.Get("/categories", func(c *fiber.Ctx) error {
 		return c.JSON(map[string]string{

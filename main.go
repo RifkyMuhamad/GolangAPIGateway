@@ -4,14 +4,15 @@ import (
 	"log"
 	"os"
 
+	"github.com/RifkyMuhamad/GolangAPIGateway/database"
 	"github.com/RifkyMuhamad/GolangAPIGateway/router"
 	"github.com/gofiber/fiber/v2"
 )
 
 func main() {
 
-	// var db = database.OpenConnection()
-	
+	database.OpenConnection()
+
 	app := fiber.New()
 
 	router.NewRouter(app)
