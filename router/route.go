@@ -2,7 +2,7 @@ package router
 
 import (
 	"os"
-	
+
 	"github.com/RifkyMuhamad/GolangAPIGateway/controllers"
 	"github.com/gofiber/fiber/v2"
 )
@@ -42,8 +42,10 @@ func NewRouter (app *fiber.App) {
 
 	app.Get("/env", func(c *fiber.Ctx) error {
 		test := os.Getenv("TEST_ENV")
+		mysqlLocal := os.Getenv("MYSQL_LOCAL")
 		data := map[string]string{
 			"port": test,
+			"mysql": mysqlLocal,
 		}
 		return c.JSON(data)
 	})
