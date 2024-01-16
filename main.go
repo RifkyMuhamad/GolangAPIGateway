@@ -11,7 +11,7 @@ import (
 
 func main() {
 
-	database.CobaENV()
+	database.OpenConnection()
 
 	app := fiber.New()
 
