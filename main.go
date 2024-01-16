@@ -10,15 +10,12 @@ import (
 )
 
 func main() {
-
 	database.OpenConnection()
 
 	app := fiber.New()
-
 	router.NewRouter(app)
 
 	port := os.Getenv("PORT")
-
 	if port == "" {
 		port = "3000"
 	}
