@@ -15,8 +15,8 @@ func main() {
 
 	app.Get("/", func(c *fiber.Ctx) error {
 		data := map[string]string{
-			"message": "Dyone Strankers use Go Fiber",
 			"documentation": "https://github.com/RifkyMuhamad/GolangAPIGateway",
+			"message": "Dyone Strankers use Go Fiber",
 		}
 		return c.JSON(data)
 	})
