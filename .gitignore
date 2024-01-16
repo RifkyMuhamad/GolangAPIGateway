@@ -1,0 +1,10 @@
+test
+service
+router
+repository
+models
+middleware
+helper
+exception
+database
+.env
