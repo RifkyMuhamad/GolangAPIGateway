@@ -4,13 +4,14 @@ import (
 	"log"
 	"os"
 
+	"github.com/RifkyMuhamad/GolangAPIGateway/database"
 	"github.com/RifkyMuhamad/GolangAPIGateway/router"
 	"github.com/gofiber/fiber/v2"
 )
 
 func main() {
 
-	// database.OpenConnection()
+	database.CobaENV()
 
 	app := fiber.New()
 
